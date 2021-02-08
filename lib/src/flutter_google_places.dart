@@ -71,7 +71,7 @@ class PlacesAutocompleteWidget extends StatefulWidget {
   }
 
   static PlacesAutocompleteState of(BuildContext context) =>
-      context.ancestorStateOfType(const TypeMatcher<PlacesAutocompleteState>());
+      context.dependOnInheritedWidgetOfExactType<const TypeMatcher<PlacesAutocompleteState>()>();
 }
 
 class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
@@ -91,10 +91,10 @@ class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final headerTopLeftBorderRadius = widget.overlayBorderRadius != null ? 
+    final headerTopLeftBorderRadius = widget.overlayBorderRadius != null ?
       widget.overlayBorderRadius.topLeft : Radius.circular(2);
 
-    final headerTopRightBorderRadius = widget.overlayBorderRadius != null ? 
+    final headerTopRightBorderRadius = widget.overlayBorderRadius != null ?
       widget.overlayBorderRadius.topRight : Radius.circular(2);
 
     final header = Column(children: <Widget>[
@@ -130,10 +130,10 @@ class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
 
     Widget body;
 
-    final bodyBottomLeftBorderRadius = widget.overlayBorderRadius != null ? 
+    final bodyBottomLeftBorderRadius = widget.overlayBorderRadius != null ?
       widget.overlayBorderRadius.bottomLeft : Radius.circular(2);
 
-    final bodyBottomRightBorderRadius = widget.overlayBorderRadius != null ? 
+    final bodyBottomRightBorderRadius = widget.overlayBorderRadius != null ?
       widget.overlayBorderRadius.bottomRight : Radius.circular(2);
 
     if (_searching) {
