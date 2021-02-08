@@ -71,7 +71,7 @@ class PlacesAutocompleteWidget extends StatefulWidget {
   }
 
   static PlacesAutocompleteState of(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<const TypeMatcher<PlacesAutocompleteState>()>();
+      context.findAncestorStateOfType(const TypeMatcher<PlacesAutocompleteState>());
 }
 
 class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
